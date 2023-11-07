@@ -29,26 +29,28 @@
                 <th>주소</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td>{{loginID}}</td>
-                <td>{{userName}}</td>
-                <td>{{email}}</td>
-                <td>{{address}}</td>
-            </tr>
-            <tr>
-                <td>{{loginID}}</td>
-                <td>{{userName}}</td>
-                <td>{{email}}</td>
-                <td>{{address}}</td>
-            </tr>
-            <tr>
-                <td>{{loginID}}</td>
-                <td>{{userName}}</td>
-                <td>{{email}}</td>
-                <td>{{address}}</td>
-            </tr>
-            </tbody>
+<!--            <tbody>-->
+<!--            <tr>-->
+<!--                <td>{{loginID}}</td>-->
+<!--                <td>{{userName}}</td>-->
+<!--                <td>{{email}}</td>-->
+<!--                <td>{{address}}</td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+            <script id="template" data-template="result-body" type="text/x-handlebars-template">
+                {{#each this}}
+                <tr>
+                    <td>{{loginID}}</td>
+                    <td>{{userName}}</td>
+                    <td>{{email}}</td>
+                    <td>{{address}}</td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="4">데이터가 존재하지 않습니다.</td>
+                </tr>
+                {{/each}}
+            </script>
         </table>
         <ul class="pagination">
             <li class="page-item"><a class="page-link" href="#"><<</a></li>
