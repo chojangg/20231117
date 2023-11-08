@@ -15,9 +15,11 @@ public class UserDaoJDBC implements UserDao{
 
     @Override
     public List<UserVo> userList(UserDto userDto) {
-        String sql = "select login_Id, user_nm, email, address from test_user";
+        String sql = "select login_Id, user_nm, email, address" +
+                " from test_user" +
+                " order by 1";
 
-        return jdbcTemplate.query(sql, (rs, rowNumber) ->
+           return jdbcTemplate.query(sql, (rs, rowNumber) ->
                 new UserVo(
                         rs.getString(1),
                         rs.getString(2),

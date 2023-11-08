@@ -1,43 +1,34 @@
 package lab.solupia.study.springboot.dto;
 
 public class UserVo {
-    public String getLoginID() {
-        return loginID;
+    private String loginID;
+    private String userName;
+    private String email;
+    private String address;
+
+    public UserVo(){
     }
 
-    public void setLoginID(String loginID) {
+    public UserVo(String loginID, String userName, String email, String address) {
         this.loginID = loginID;
+        this.userName = userName;
+        this.email = email;
+        this.address = address;
+    }
+    public String getLoginID() {
+        return loginID;
     }
 
     public String getUserName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    private String loginID;
-    private String userName;
-    private String email;
-    private String address;
-
-    public UserVo(String string, String rsString, String s, String string1) {
-    }
 }

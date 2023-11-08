@@ -7,6 +7,8 @@ public class UserDto {
     private String email;
     private String address;
 
+    public UserDto() {
+    }
     public String getLoginID() {
         return loginID;
     }
@@ -37,8 +39,5 @@ public class UserDto {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public UserDto() {
     }
 }
