@@ -44,6 +44,7 @@
             </div>
         </div>
         <button type="button" id="btn" class="btn btn-primary">조회하기</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='add_user'">사용자 추가</button>
         <table class="table">
             <thead>
             <tr>
@@ -69,13 +70,11 @@
             </script>
             <tbody id="result-body"></tbody>
         </table>
-        <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#"><<</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">>></a></li>
-        </ul>
+        <div class="col-lg-12">
+            <div class="d-flex justify-content-center">
+                <div id="pagination" class="pagination-sm"></div>
+            </div>
+        </div>
     </div>
 
 </body>
@@ -89,22 +88,22 @@
     $(document).ready(() => {
         // const template = Handlebars.compile($("#template").eq(0).html());
         // $("#result-body").html(template(userList));
-        UserList.reload();
+        UserList.reload(1);
     });
 
     const UserList = {
-        $el: $("user"),
+        $el: $("#user"),
 
         bind: {
             buttons: () => {
-
             }
         },
 
-        reload() {
+        reload: () => {
             const data = {
             }
 
+            // https://api.jquery.com/jquery.ajax/
             $.ajax({
                 method: 'get',
                 url: '/api/users',
@@ -117,6 +116,23 @@
                     const template = Handlebars.compile($("#template").eq(0).html());
                     $("#result-body").html(template(response));
 
+                    // https://josecebe.github.io/twbs-pagination/
+                    // https://github.com/josecebe/twbs-pagination
+                    $("#pagination").twbsPagination({
+                        startPage: 1,
+                        totalPages: 10,
+                        visiblePages: 5,
+                        itemOnPage: 5,
+                        initiateStartPageClick: false,
+                        first: '&laquo;&laquo;',
+                        prev: '&laquo;',
+                        next: '&raquo;',
+                        last: '&raquo;&raquo;',
+                        onPageClick: function (event, page) {
+                            console.log(`click Page : ${page}`);
+                            UserList.reload();
+                        }
+                    });
                 },
                 error: (e) => {
                     console.log(e);
@@ -124,9 +140,6 @@
             });
         }
     };
-</script>
-
-
 </script>
 
 </html>

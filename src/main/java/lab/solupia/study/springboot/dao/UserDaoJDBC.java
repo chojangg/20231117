@@ -28,4 +28,10 @@ public class UserDaoJDBC implements UserDao{
                 )
         );
     }
+
+    @Override
+    public void insert(UserDto dto) {
+        String sql = "insert into test_user values(?,?,?,?)";
+        jdbcTemplate.update(sql, dto.getLoginID(), dto.getUserName(), dto.getEmail(), dto.getAddress());
+    }
 }
