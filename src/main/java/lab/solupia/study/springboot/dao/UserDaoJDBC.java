@@ -33,4 +33,10 @@ public class UserDaoJDBC implements UserDao{
         String sql = "insert into test_user (login_id, user_nm, email, address) values(?,?,?,?)";
         jdbcTemplate.update(sql, dto.getLoginID(), dto.getUserName(), dto.getEmail(), dto.getAddress());
     }
+
+    @Override
+    public void delete(String loginID) {
+        String sql = "delete from test_user where login_Id = ?";
+        jdbcTemplate.update(sql, loginID);
+    }
 }

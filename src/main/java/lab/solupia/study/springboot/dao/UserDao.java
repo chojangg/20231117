@@ -9,4 +9,5 @@ import java.util.List;
 public interface UserDao {
     List<UserVo> userList(UserDto userDTO);
     public void insert(UserDto dto);
+    public void delete(String loginID);
 }

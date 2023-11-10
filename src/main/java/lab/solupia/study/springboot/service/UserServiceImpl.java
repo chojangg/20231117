@@ -25,4 +25,9 @@ public class UserServiceImpl implements UserService {
         userDao.insert(dto);
     }
 
+    @Override
+    public void delete(String loginID) {
+        userDao.delete(loginID);
+    }
+
 }

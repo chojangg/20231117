@@ -37,4 +37,8 @@ public class controller {
         return "redirect:/";
     }
 
+//    @GetMapping("/delete/{loginID}")
+
+
+
 }
