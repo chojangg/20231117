@@ -2,9 +2,12 @@ package lab.solupia.study.springboot.controller;
 
 import lab.solupia.study.springboot.dto.UserDto;
 import lab.solupia.study.springboot.service.UserService;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -24,8 +27,8 @@ public class controller {
     }
 
     @GetMapping("/add_user")
-    public ModelAndView addUser() {
-        return new ModelAndView("add_user");
+    public String addUser() {
+        return "add_user";
     }
 
     @PostMapping("/add_done")
@@ -33,4 +36,5 @@ public class controller {
         service.insert(dto);
         return "redirect:/";
     }
+
 }

@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 <form method="post" action="add_done">
-    <h1>사용자 추가</h1>
-    <table>
-        <tr>
-            <td>로그인ID</td>
-            <td><input type="text" name="loginId"/> </td>
-        </tr>
-        <tr>
-            <td>사용자명</td>
-            <td><input type="text" name="userName"/> </td>
-        </tr>
-        <tr>
-            <td>이메일</td>
-            <td><input type="text" name="email"/> </td>
-        </tr>
-        <tr>
-            <td>주소</td>
-            <td><input type="text" name="address"/> </td>
-        </tr>
-    </table>
-    <button type="submit">등록</button>
+    <div class="container pt-3"></div>
+    <div class="container">
+        <h1>사용자 추가</h1>
+        <table>
+            <tr>
+                <td>loginID</td>
+                <td><input type="text" name="loginID" placeholder="로그인ID"/></td>
+            </tr>
+            <tr>
+                <td>userName</td>
+                <td><input type="text" name="userName" placeholder="사용자 이름"/></td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td><input type="text" name="email" placeholder="이메일"/></td>
+            </tr>
+            <tr>
+                <td>address</td>
+                <td><input type="text" name="address" placeholder="주소"/></td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-primary">등록</button>
+    </div>
 </form>
 </body>
 </html>

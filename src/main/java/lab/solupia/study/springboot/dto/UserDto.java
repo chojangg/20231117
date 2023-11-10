@@ -1,5 +1,6 @@
 package lab.solupia.study.springboot.dto;
 
+import lombok.Data;
 
 public class UserDto {
     private String loginID;

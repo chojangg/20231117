@@ -16,8 +16,7 @@ public class UserDaoJDBC implements UserDao{
     @Override
     public List<UserVo> userList(UserDto userDto) {
         String sql = "select login_Id, user_nm, email, address" +
-                " from test_user" +
-                " order by 1";
+                " from test_user";
 
            return jdbcTemplate.query(sql, (rs, rowNumber) ->
                 new UserVo(
@@ -31,7 +30,7 @@ public class UserDaoJDBC implements UserDao{
 
     @Override
     public void insert(UserDto dto) {
-        String sql = "insert into test_user values(?,?,?,?)";
+        String sql = "insert into test_user (login_id, user_nm, email, address) values(?,?,?,?)";
         jdbcTemplate.update(sql, dto.getLoginID(), dto.getUserName(), dto.getEmail(), dto.getAddress());
     }
 }
