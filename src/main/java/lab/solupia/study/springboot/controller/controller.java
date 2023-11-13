@@ -37,7 +37,11 @@ public class controller {
         return "redirect:/";
     }
 
-//    @GetMapping("/delete/{loginID}")
+    @GetMapping("/delete/{loginID}")
+    public String deleteUser(@PathVariable String loginID){
+        service.delete(loginID);
+        return "redirect:/";
+    }
 
 
 

@@ -25,7 +25,9 @@ insert into test_user values ('ccc', 'user3', 'ccc@solupia.co.kr', '부산');
 insert into test_user values ('ddd', 'user4', 'ddd@solupia.co.kr', '대구');
 insert into test_user values ('eee', 'user5', 'eee@solupia.co.kr', '전주');
 insert into test_user values ('fff', 'user6', 'fff@solupia.co.kr', '수원');
-delete from test_user where login_Id = 'fff';
+delete from test_user where login_Id = 'fffdfd';
+UPDATE test_user SET login_Id = 'aaaaa' WHERE login_Id = 'aaa';
+select * from test_user;
 
 commit;
 

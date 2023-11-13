@@ -53,6 +53,7 @@
                 <th>이메일</th>
                 <th>주소</th>
                 <th> </th>
+                <th> </th>
             </tr>
             </thead>
             <script id="template" data-template="result-body" type="text/x-handlebars-template">
@@ -62,7 +63,8 @@
                     <td>{{userName}}</td>
                     <td>{{email}}</td>
                     <td>{{address}}</td>
-                    <td><button type="button" class="btn btn-primary" onclick="location.href=`delete/${loginID}`">사용자 삭제</button></td>
+                    <td><button type="button" class="btn btn-primary" onclick="location.href=`update/{{loginID}}`">수정</button></td>
+                    <td><button type="button" class="btn btn-danger" onclick="location.href=`delete/{{loginID}}`">삭제</button></td>
                 </tr>
                 {{else}}
                 <tr>
